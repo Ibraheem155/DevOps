@@ -1,0 +1,20 @@
+sudo apt install nginx //installing the first service in LEMP Stack : NGINX
+sudo systemctl status nginx //confirming status of nginx service: status green and runnig
+curl http://localhost //check if you can access locally on Ubuntu shell
+//if you cannot access it locally the create a new inbound rule on the AWS console TCP port 80 Custom IP 0.0.000.0/0
+sudo apt install mysql-server //to install mysql server
+//follow the myqsl process installation in Project1
+sudo apt install php-fpm php-mysql //install php service
+//follow the Php installation process in Project1
+sudo mkdir /var/www/projectLEMP //create new project in www directory
+sudo chown -R $USER:$USER /var/www/projectLEMP //set ownershipof the project to USER enviornmental variable: current system user
+sudo nano /etc/nginx/sites-available/projectLEMP // create a blank file for nginx config
+//copy and paste the bare-bones configration and save the file 
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+sudo nano /var/www/projectLEMP/info.php
+create database
+create user for dp 
+create table 
+insert records
+nano /var/www/projectLEMP/todo_list.php //create php file for table todo_list
+
